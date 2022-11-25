@@ -1,7 +1,13 @@
 <template>
   <footer>
-    <a class="logo" href="/">
-      <img src="@/img/la-molisana-logo.png" alt="La molisana" />
+    <a
+      class="logo"
+      href="/"
+    >
+      <img
+        src="@/img/la-molisana-logo.png"
+        alt="La molisana"
+      >
     </a>
 
     <nav>
@@ -30,7 +36,11 @@
       </ul>
     </nav>
 
-    <img class="footer-mountains" src="@/img/footer-montagne-bottom.jpg" alt="Mountains" />
+    <img
+      class="footer-mountains"
+      src="@/img/footer-montagne-bottom.jpg"
+      alt="Mountains"
+    >
   </footer>
 </template>
 
@@ -47,6 +57,7 @@ footer {
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 4rem;
+  // max-width: v-bind(size);
 
   ul {
     list-style: none;

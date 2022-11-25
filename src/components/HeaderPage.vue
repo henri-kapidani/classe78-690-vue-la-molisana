@@ -1,12 +1,17 @@
 <template>
   <header>
-    <img src="@/img/la-molisana-logo.png" alt="">
+    <img
+      src="@/img/la-molisana-logo.png"
+      alt=""
+    >
     <nav>
       <ul>
-        <li><a href="#!">Home</a></li>
-        <li><a href="#!">Prodotti</a></li>
-        <li><a href="#!">Chi siamo</a></li>
-        <li><a href="#!">Contatti</a></li>
+        <li
+          v-for="eleMenu in arrMenu"
+          :key="eleMenu.text"
+        >
+          <a :href="eleMenu.url">{{ eleMenu.text }}</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -15,6 +20,28 @@
 <script>
 export default {
   name: 'HeaderPage',
+  data() {
+    return {
+      arrMenu: [
+        {
+          url: '#home',
+          text: 'Home',
+        },
+        {
+          url: '#Prodotti',
+          text: 'Prodotti',
+        },
+        {
+          url: '#Chi-siamo',
+          text: 'Chi siamo',
+        },
+        {
+          url: '#Contatti',
+          text: 'Contatti',
+        },
+      ],
+    };
+  },
 };
 </script>
 
