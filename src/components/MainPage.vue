@@ -1,30 +1,136 @@
 <template>
   <main>
     <div class="container">
-      Il contenuto va qui
+      <!-- <CardPasta
+        v-for="objPasta in arrPaste"
+        :key="objPasta.titolo"
+        class="card-pasta"
+        :img-url="objPasta.src"
+        :title="objPasta.titolo"
+        :min-cottura="objPasta.cottura"
+      /> -->
+
+      <CardPasta
+        v-for="objPasta in arrPaste"
+        :key="objPasta.titolo"
+        class="card-pasta"
+        :pasta="objPasta"
+      />
     </div>
   </main>
 </template>
 
 <script>
+import CardPasta from '@/components/CardPasta.vue';
+// import arrPaste from '@/components/dati';
+
 export default {
   name: 'MainPage',
+  components: {
+    CardPasta,
+  },
+  data() {
+    return {
+      // arrPaste, // se l'array e' stato importato
+
+      arrPaste: [
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/04/1-spaghetto-quadrato.jpg',
+          titolo: 'N.4 Spaghetto Quadrato Bucato',
+          tipo: 'lunga',
+          cottura: 6,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/04/5-fettuccine.jpg',
+          titolo: 'N.5 Fettuccine',
+          tipo: 'lunga',
+          cottura: 13,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/04/6-linguine.jpg',
+          titolo: 'N.6 Linguine',
+          tipo: 'lunga',
+          cottura: 12,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/04/7-mezze-linguine.jpg',
+          titolo: 'N.7 Mezze Linguine',
+          tipo: 'lunga',
+          cottura: 11,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/04/11-spaghettino-quadrato.jpg',
+          titolo: 'n.11 Spaghettino Quadrato',
+          tipo: 'lunga',
+          cottura: 9,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/05/38-mezze-maniche.jpg',
+          titolo: 'N.38 Mezze maniche',
+          tipo: 'corta',
+          cottura: 12,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/05/44-sedani.jpg',
+          titolo: 'N.44 Sedani',
+          tipo: 'corta',
+          cottura: 8,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/05/49-sedani.jpg',
+          titolo: 'N.49 Sedanini',
+          tipo: 'corta',
+          cottura: 8,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/05/53-lumachine.jpg',
+          titolo: 'N.53 Lumachine',
+          tipo: 'corta',
+          cottura: 12,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/05/55-chifferi-rigati.jpg',
+          titolo: 'N.55 Chifferi rigati',
+          tipo: 'corta',
+          cottura: 12,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/05/58-misto-corto.jpg',
+          titolo: 'N.58 Misto corto',
+          tipo: 'corta',
+          cottura: 9,
+        },
+        {
+          src: 'https://www.lamolisana.it/wp-content/uploads/2021/06/84-ditale-quadrato.jpg',
+          titolo: 'N.84 Ditale Quadrato',
+          tipo: 'cortissima',
+          cottura: 12,
+        },
+      ],
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-  main {
-    padding: 6rem 0;
+main {
+  padding: 3rem 0;
 
-    background-image: url('@/img/fondo-pag-speciali.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("@/img/fondo-pag-speciali.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 700px;
   }
+
+  .card-pasta {
+    flex: 0 0 25%;
+  }
+}
 </style>
